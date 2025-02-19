@@ -63,7 +63,7 @@ const Register = () => {
         }
       );
 
-      if (response.data.status === 200) {
+      if (response.data.Code === 200) {
         Swal.fire(
           "Success",
           response.data.message || "User registered successfully!",
@@ -78,6 +78,7 @@ const Register = () => {
           title: "Oops...",
           text: response?.data?.message || "Registration failed",
         });
+        form.resetFields();
       }
     } catch (error) {
       Swal.fire({
